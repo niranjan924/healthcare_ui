@@ -13,14 +13,16 @@ import {
   CheckCircle2,
   Star,
   Award,
-  Target,
-  Clock,
+  PersonStanding,
+  Pill,
+  CirclePlus,
 } from "lucide-react";
-import about1 from "@/assets/about/about-1.png";
+import banner from "@/assets/about/banner.png";
 import about2 from "@/assets/about/about-2.png";
 import about3 from "@/assets/about/about-3.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import HeroSection from "@/components/HeroSection";
 // export const metadata: Metadata = {
 //   title: "About | HealthCare Association",
 //   description:
@@ -35,24 +37,14 @@ export default function AboutPage() {
   }, []);
   const expertise = [
     {
-      icon: <AlertCircle className="w-8 h-8 text-cyan-600" />,
-      title: "Tropical Infections",
-      description: "Chikungunya, Typhoid, Malaria, and Dengue",
-    },
-    {
-      icon: <Heart className="w-8 h-8 text-red-500" />,
-      title: "HIV & AIDS",
-      description: "Comprehensive management and treatment",
-    },
-    {
-      icon: <Lungs className="w-8 h-8 text-blue-600" />,
-      title: "Tuberculosis",
-      description: "Expert diagnosis and treatment protocols",
-    },
-    {
       icon: <Bone className="w-8 h-8 text-amber-600" />,
       title: "Bone & Joint",
       description: "Specialized infection management",
+    },
+    {
+      icon: <Activity className="w-8 h-8 text-emerald-600" />,
+      title: "Cardiac Infections",
+      description: "Heart-related infection care",
     },
     {
       icon: <Brain className="w-8 h-8 text-purple-600" />,
@@ -60,9 +52,21 @@ export default function AboutPage() {
       description: "Brain and spine infection treatment",
     },
     {
-      icon: <Activity className="w-8 h-8 text-emerald-600" />,
-      title: "Cardiac Infections",
-      description: "Heart-related infection care",
+      icon: <Pill className="w-8 h-8 text-cyan-600" />,
+      title: "Gastrointestinal infections",
+      description:
+        "Digestive system infections, food poisoning, and gastroenteritis management",
+    },
+    {
+      icon: <PersonStanding className="w-8 h-8 text-red-500" />,
+      title: "Genito-urinary infections ",
+      description: "UTIs, kidney infections, and reproductive system disorders",
+    },
+    {
+      icon: <CirclePlus className="w-8 h-8 text-blue-600" />,
+      title: "Pulmonary infections",
+      description:
+        "Respiratory tract infections, pneumonia, and breathing disorders",
     },
   ];
 
@@ -87,31 +91,15 @@ export default function AboutPage() {
     },
   ];
 
-  const services = [
-    "Adult Vaccination",
-    "Bone and Joint Infections",
-    "Cardiac Infections",
-    "Central Nervous System Infections",
-    "Community Acquired Infections",
-    "Fungal Infection",
-    "Gastrointestinal Infections",
-    "Genitourinary Infections",
-    "HIV & AIDS",
-    "Hospital-acquired infections",
-    "Infections in Cancer Patients",
-    "Infections in Transplant Patients",
-    "Pulmonary Infections",
-    "Pyrexia of unknown origin (PUO)",
-    "Skin and Skin Structure Infection",
-    "Stent and Implant-Associated Infections",
-    "Tropical Infections",
-    "Tuberculosis",
-    "Viral Infections",
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
       {/* Hero Section */}
+      <HeroSection
+        title="About Us"
+        subtitle="At Health Care Association Infectious Diseases Clinic, Ahmedabad, we are a team of dedicated physicians, nurses, and support personnel who specialize in the diagnosis, treatment, and management of various infectious diseases. We are committed to providing our patients with the most superior care available. "
+        buttonText="Get Started"
+        backgroundImage={banner}
+      />
       {/* <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20 z-10"></div>
         <div
@@ -147,49 +135,52 @@ export default function AboutPage() {
           </div>
         </div>
       </section> */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white">
-            <div className="absolute inset-0 bg-black/20"></div>
-            <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                  <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                    Health Care Association
-                    <span className="block text-cyan-100 text-3xl lg:text-4xl mt-2">
-                      Infectious Diseases Clinic
-                    </span>
-                  </h1>
-                  <p className="text-xl lg:text-2xl text-cyan-50 leading-relaxed">
-                    Ahmedabad's premier destination for specialized infectious disease care, 
-                    where expertise meets compassion in every treatment.
-                  </p>
-                  <div className="flex items-center space-x-6">
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-300" />
-                      <span className="text-lg font-medium">Expert Care</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-300" />
-                      <span className="text-lg font-medium">Advanced Treatment</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-300" />
-                      <span className="text-lg font-medium">Trusted Results</span>
-                    </div>
-                  </div>
+      {/* <section className="relative overflow-hidden bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                Health Care Association
+                <span className="block text-cyan-100 text-3xl lg:text-4xl mt-2">
+                  Infectious Diseases Clinic
+                </span>
+              </h1>
+              <p className="text-xl lg:text-2xl text-cyan-50 leading-relaxed">
+                Ahmedabad's premier destination for specialized infectious
+                disease care, where expertise meets compassion in every
+                treatment.
+              </p>
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-300" />
+                  <span className="text-lg font-medium">Expert Care</span>
                 </div>
-                <div className="relative">
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <Image
-                      src={about1}
-                      alt="Medical professionals providing care"
-                      className="w-full h-96 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-transparent"></div>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-300" />
+                  <span className="text-lg font-medium">
+                    Advanced Treatment
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-300" />
+                  <span className="text-lg font-medium">Trusted Results</span>
                 </div>
               </div>
             </div>
-          </section>
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src={about2}
+                  alt="Medical professionals providing care"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
 
       {/* Introduction */}
       <section className="py-20 bg-white">
@@ -255,12 +246,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Our Medical Expertise
+              Our Expertise
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our clinic is equipped to handle a wide range of infections, from
-              tropical diseases to complex systemic infections affecting various
-              parts of the body.
+            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
+              Our clinic is equipped to handle a wide range of infections,
+              including complicated tropical infections like Chikungunya,
+              Typhoid, Malaria, and Dengue. We also have extensive experience in
+              the management of HIV & AIDS and Tuberculosis. Additionally, our
+              team is skilled in treating infections affecting specific parts of
+              the body, such as:
             </p>
           </div>
 
@@ -282,8 +276,18 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <div className="text-center mb-16 mt-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Add some heading here
+            </h2>
+            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
+              Our collaborative approach ensures that every patient receives a
+              comprehensive and coordinated care plan tailored to their specific
+              needs.
+            </p>
+          </div>
 
-          <div className="mt-16 bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
+          {/* <div className="mt-16 bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
@@ -323,7 +327,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -361,7 +365,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-3xl p-8 lg:p-12 text-white text-center">
+          {/* <div className="bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-3xl p-8 lg:p-12 text-white text-center">
             <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
             <p className="text-xl leading-relaxed max-w-4xl mx-auto">
               Our ultimate mission is to deliver honest, compassionate, and
@@ -370,85 +374,14 @@ export default function AboutPage() {
               as your genuinely caring, fundamentally honest, and absolutely
               trustworthy healthcare partner.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Our Medical Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive infectious disease treatment and management services
-              offered at our specialized clinic in Ahmedabad.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group border border-gray-100"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-full group-hover:scale-125 transition-transform"></div>
-                  <h3 className="text-gray-900 font-semibold group-hover:text-cyan-700 transition-colors">
-                    {service}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-16 grid lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-cyan-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Expert Team
-              </h3>
-              <p className="text-gray-600">
-                Dedicated physicians, nurses, and support personnel specializing
-                in infectious diseases
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Personalized Care
-              </h3>
-              <p className="text-gray-600">
-                Comprehensive and coordinated care plans tailored to each
-                patient's specific needs
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Timely Treatment
-              </h3>
-              <p className="text-gray-600">
-                Swift diagnosis and immediate treatment protocols for optimal
-                patient outcomes
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Services Section removed form here */}
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-cyan-900 text-white">
+      {/* <section className="py-16 bg-gradient-to-r from-gray-900 to-cyan-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
             Ready to Receive Expert Care?
@@ -466,7 +399,7 @@ export default function AboutPage() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -40,6 +40,18 @@ export default function Header() {
               About Us
             </Link>
             <Link
+              href="/services"
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              href="/treatment"
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Treatment
+            </Link>
+            <Link
               href="/blog"
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
             >
@@ -51,7 +63,7 @@ export default function Header() {
             >
               Contact
             </Link>
-            <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-md">
+            <button className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white px-4 py-2 rounded-md">
               Book Appointment
             </button>
           </div>
@@ -86,6 +98,18 @@ export default function Header() {
                 About Us
               </Link>
               <Link
+                href="/services"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                Services
+              </Link>
+              <Link
+                href="/treatment"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                Treatment
+              </Link>
+              <Link
                 href="/blog"
                 className="text-gray-700 hover:text-blue-600 font-medium"
               >
@@ -97,7 +121,7 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white w-full px-4 py-2 rounded-md">
+              <button className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white w-full px-4 py-2 rounded-md">
                 Book Appointment
               </button>
             </div>
