@@ -51,7 +51,7 @@ export default function Header() {
             >
               Treatment
             </Link>
-            <Link
+            {/* <Link
               href="/blog"
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
             >
@@ -62,7 +62,7 @@ export default function Header() {
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
             >
               Contact
-            </Link>
+            </Link> */}
             <button className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white px-4 py-2 rounded-md">
               Book Appointment
             </button>
@@ -109,7 +109,7 @@ export default function Header() {
               >
                 Treatment
               </Link>
-              <Link
+              {/* <Link
                 href="/blog"
                 className="text-gray-700 hover:text-blue-600 font-medium"
               >
@@ -120,7 +120,7 @@ export default function Header() {
                 className="text-gray-700 hover:text-blue-600 font-medium"
               >
                 Contact
-              </Link>
+              </Link> */}
               <button className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white w-full px-4 py-2 rounded-md">
                 Book Appointment
               </button>
