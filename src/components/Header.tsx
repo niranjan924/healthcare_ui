@@ -27,13 +27,19 @@ export default function Header() {
     }
     closeTimerRef.current = window.setTimeout(() => {
       setIsSurgeriesDropdownOpen(false);
-      try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {}
+      try {
+        if (typeof window !== "undefined")
+          window.localStorage.setItem("surgeriesMenuOpen", "false");
+      } catch {}
     }, 150);
   }
 
   useEffect(() => {
     try {
-      const stored = typeof window !== "undefined" ? window.localStorage.getItem("surgeriesMenuOpen") : null;
+      const stored =
+        typeof window !== "undefined"
+          ? window.localStorage.getItem("surgeriesMenuOpen")
+          : null;
       if (stored === "true") {
         setIsSurgeriesDropdownOpen(true);
       }
@@ -42,18 +48,27 @@ export default function Header() {
 
   useEffect(() => {
     function handleDocumentClick(event: MouseEvent) {
-      const isDesktop = typeof window !== "undefined" ? window.innerWidth >= 768 : true;
+      const isDesktop =
+        typeof window !== "undefined" ? window.innerWidth >= 768 : true;
       if (!isDesktop) return; // Ignore outside-click closing on mobile
       if (isMenuOpen) return; // Ignore when mobile menu is open
       const target = event.target as Node | null;
-      if (surgeriesRef.current && target && !surgeriesRef.current.contains(target)) {
+      if (
+        surgeriesRef.current &&
+        target &&
+        !surgeriesRef.current.contains(target)
+      ) {
         setIsSurgeriesDropdownOpen(false);
-        try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {}
+        try {
+          if (typeof window !== "undefined")
+            window.localStorage.setItem("surgeriesMenuOpen", "false");
+        } catch {}
       }
     }
     if (typeof window !== "undefined") {
       document.addEventListener("mousedown", handleDocumentClick);
-      return () => document.removeEventListener("mousedown", handleDocumentClick);
+      return () =>
+        document.removeEventListener("mousedown", handleDocumentClick);
     }
   }, [isMenuOpen]);
 
@@ -109,7 +124,13 @@ export default function Header() {
                   href="/surgeries"
                   onClick={() => {
                     setIsSurgeriesDropdownOpen(true);
-                    try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "true"); } catch {}
+                    try {
+                      if (typeof window !== "undefined")
+                        window.localStorage.setItem(
+                          "surgeriesMenuOpen",
+                          "true"
+                        );
+                    } catch {}
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                 >
@@ -119,14 +140,20 @@ export default function Header() {
                   aria-label="Open surgeries menu"
                   onClick={() => {
                     openSurgeriesMenu();
-                    try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "true"); } catch {}
+                    try {
+                      if (typeof window !== "undefined")
+                        window.localStorage.setItem(
+                          "surgeriesMenuOpen",
+                          "true"
+                        );
+                    } catch {}
                   }}
                   className="text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   <ChevronDown className="h-4 w-4 mt-1" />
                 </button>
               </div>
-              
+
               {isSurgeriesDropdownOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50"
@@ -135,28 +162,64 @@ export default function Header() {
                 >
                   <Link
                     href="/surgeries/urology"
-                    onClick={() => { setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
+                    onClick={() => {
+                      setIsSurgeriesDropdownOpen(false);
+                      try {
+                        if (typeof window !== "undefined")
+                          window.localStorage.setItem(
+                            "surgeriesMenuOpen",
+                            "false"
+                          );
+                      } catch {}
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Urology Surgery
                   </Link>
                   <Link
                     href="/surgeries/laparoscopic"
-                    onClick={() => { setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
+                    onClick={() => {
+                      setIsSurgeriesDropdownOpen(false);
+                      try {
+                        if (typeof window !== "undefined")
+                          window.localStorage.setItem(
+                            "surgeriesMenuOpen",
+                            "false"
+                          );
+                      } catch {}
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Laparoscopic Surgery
                   </Link>
                   <Link
                     href="/surgeries/orthopedic"
-                    onClick={() => { setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
+                    onClick={() => {
+                      setIsSurgeriesDropdownOpen(false);
+                      try {
+                        if (typeof window !== "undefined")
+                          window.localStorage.setItem(
+                            "surgeriesMenuOpen",
+                            "false"
+                          );
+                      } catch {}
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Orthopedic Surgery
                   </Link>
                   <Link
                     href="/surgeries/heart"
-                    onClick={() => { setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
+                    onClick={() => {
+                      setIsSurgeriesDropdownOpen(false);
+                      try {
+                        if (typeof window !== "undefined")
+                          window.localStorage.setItem(
+                            "surgeriesMenuOpen",
+                            "false"
+                          );
+                      } catch {}
+                    }}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Heart Surgery
@@ -231,7 +294,6 @@ export default function Header() {
                   <Link
                     href="/surgeries"
                     onClick={(e) => {
-                      e.preventDefault();
                       setIsSurgeriesDropdownOpen((prev) => !prev);
                     }}
                     className="text-gray-700 font-medium"
@@ -242,7 +304,13 @@ export default function Header() {
                     aria-label="Open surgeries menu"
                     onClick={() => {
                       setIsSurgeriesDropdownOpen(true);
-                      try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "true"); } catch {}
+                      try {
+                        if (typeof window !== "undefined")
+                          window.localStorage.setItem(
+                            "surgeriesMenuOpen",
+                            "true"
+                          );
+                      } catch {}
                     }}
                     className="text-gray-700"
                   >
@@ -250,36 +318,76 @@ export default function Header() {
                   </button>
                 </div>
                 {isSurgeriesDropdownOpen && (
-                <div className="ml-4 space-y-2">
-                  <Link
-                    href="/surgeries/urology"
-                    onClick={() => { setIsMenuOpen(false); setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
-                    className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
-                  >
-                    Urology Surgery
-                  </Link>
-                  <Link
-                    href="/surgeries/laparoscopic"
-                    onClick={() => { setIsMenuOpen(false); setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
-                    className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
-                  >
-                    Laparoscopic Surgery
-                  </Link>
-                  <Link
-                    href="/surgeries/orthopedic"
-                    onClick={() => { setIsMenuOpen(false); setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
-                    className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
-                  >
-                    Orthopedic Surgery
-                  </Link>
-                  <Link
-                    href="/surgeries/heart"
-                    onClick={() => { setIsMenuOpen(false); setIsSurgeriesDropdownOpen(false); try { if (typeof window !== "undefined") window.localStorage.setItem("surgeriesMenuOpen", "false"); } catch {} }}
-                    className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
-                  >
-                    Heart Surgery
-                  </Link>
-                </div>
+                  <div className="ml-4 space-y-2">
+                    <Link
+                      href="/surgeries/urology"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsSurgeriesDropdownOpen(false);
+                        try {
+                          if (typeof window !== "undefined")
+                            window.localStorage.setItem(
+                              "surgeriesMenuOpen",
+                              "false"
+                            );
+                        } catch {}
+                      }}
+                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                    >
+                      Urology Surgery
+                    </Link>
+                    <Link
+                      href="/surgeries/laparoscopic"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsSurgeriesDropdownOpen(false);
+                        try {
+                          if (typeof window !== "undefined")
+                            window.localStorage.setItem(
+                              "surgeriesMenuOpen",
+                              "false"
+                            );
+                        } catch {}
+                      }}
+                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                    >
+                      Laparoscopic Surgery
+                    </Link>
+                    <Link
+                      href="/surgeries/orthopedic"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsSurgeriesDropdownOpen(false);
+                        try {
+                          if (typeof window !== "undefined")
+                            window.localStorage.setItem(
+                              "surgeriesMenuOpen",
+                              "false"
+                            );
+                        } catch {}
+                      }}
+                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                    >
+                      Orthopedic Surgery
+                    </Link>
+                    <Link
+                      href="/surgeries/heart"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsSurgeriesDropdownOpen(false);
+                        try {
+                          if (typeof window !== "undefined")
+                            window.localStorage.setItem(
+                              "surgeriesMenuOpen",
+                              "false"
+                            );
+                        } catch {}
+                      }}
+                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                    >
+                      Heart Surgery
+                    </Link>
+                  </div>
                 )}
               </div>
               {/* <Link
@@ -295,7 +403,10 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <button onClick={() => setIsMenuOpen(false)} className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white w-full px-4 py-2 rounded-md">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-emerald-600 text-white w-full px-4 py-2 rounded-md"
+              >
                 Book Appointment
               </button>
             </div>
