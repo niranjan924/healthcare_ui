@@ -10,8 +10,29 @@ import logo from "@/assets/healthcare-logo.png";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSurgeriesDropdownOpen, setIsSurgeriesDropdownOpen] = useState(false);
+  const [isHeartDropdownOpen, setIsHeartDropdownOpen] = useState(false);
   const surgeriesRef = useRef<HTMLDivElement | null>(null);
+  const heartRef = useRef<HTMLDivElement | null>(null);
   const closeTimerRef = useRef<number | null>(null);
+  const heartCloseTimerRef = useRef<number | null>(null);
+
+  const heartSurgeryProcedures = [
+    "Vascular Surgery",
+    "Pacemaker Surgery", 
+    "Open Heart Surgery",
+    "Angiography",
+    "Minimally Invasive Cardiovascular Surgery (MICS)",
+    "Digital Subtraction Angiography (DSA)",
+    "Angioplasty",
+    "Heart Valve Surgery",
+    "Bypass Surgery",
+    "Aortic Valve Replacement",
+    "Coronary Angiography",
+    "Coronary Artery Bypass Surgery (CABG)",
+    "Mitral Valve Replacement (MVR) Surgery",
+    "Cardiothoracic Surgery",
+    "Balloon Angioplasty",
+  ];
 
   function openSurgeriesMenu() {
     if (closeTimerRef.current) {
@@ -30,6 +51,23 @@ export default function Header() {
     }, 150);
   }
 
+  function openHeartMenu() {
+    if (heartCloseTimerRef.current) {
+      window.clearTimeout(heartCloseTimerRef.current);
+      heartCloseTimerRef.current = null;
+    }
+    setIsHeartDropdownOpen(true);
+  }
+
+  function scheduleCloseHeartMenu() {
+    if (heartCloseTimerRef.current) {
+      window.clearTimeout(heartCloseTimerRef.current);
+    }
+    heartCloseTimerRef.current = window.setTimeout(() => {
+      setIsHeartDropdownOpen(false);
+    }, 150);
+  }
+
   useEffect(() => {
     function handleDocumentClick(event: MouseEvent) {
       const isDesktop =
@@ -43,6 +81,13 @@ export default function Header() {
         !surgeriesRef.current.contains(target)
       ) {
         setIsSurgeriesDropdownOpen(false);
+      }
+      if (
+        heartRef.current &&
+        target &&
+        !heartRef.current.contains(target)
+      ) {
+        setIsHeartDropdownOpen(false);
       }
     }
     if (typeof window !== "undefined") {
@@ -148,13 +193,43 @@ export default function Header() {
                   >
                     Orthopedic Surgery
                   </Link>
-                  <Link
-                    href="/surgeries/heart"
-                    onClick={() => setIsSurgeriesDropdownOpen(false)}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                  <div
+                    className="relative"
+                    ref={heartRef}
+                    onMouseEnter={openHeartMenu}
+                    onMouseLeave={scheduleCloseHeartMenu}
                   >
-                    Heart Surgery
-                  </Link>
+                    <div className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">
+                      <Link
+                        href="/surgeries/heart"
+                        onClick={() => setIsSurgeriesDropdownOpen(false)}
+                        className="flex-1"
+                      >
+                        Heart Surgery
+                      </Link>
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </div>
+                    
+                    {isHeartDropdownOpen && (
+                      <div
+                        className="absolute right-full top-0 mt-0 w-80 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50 max-h-96 overflow-y-auto"
+                        onMouseEnter={openHeartMenu}
+                        onMouseLeave={scheduleCloseHeartMenu}
+                      >
+                        {/* <div className="px-4 py-2 border-b border-gray-100">
+                          <h4 className="font-semibold text-gray-900 text-sm">Heart Surgery Procedures</h4>
+                        </div> */}
+                        {heartSurgeryProcedures.map((procedure, index) => (
+                          <div
+                            key={index}
+                            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                          >
+                            {procedure}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -273,16 +348,43 @@ export default function Header() {
                     >
                       Orthopedic Surgery
                     </Link>
-                    <Link
-                      href="/surgeries/heart"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsSurgeriesDropdownOpen(false);
-                      }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium"
-                    >
-                      Heart Surgery
-                    </Link>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href="/surgeries/heart"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsSurgeriesDropdownOpen(false);
+                          }}
+                          className="text-gray-600 font-medium"
+                        >
+                          Heart Surgery
+                        </Link>
+                        <button
+                          aria-label="Open heart surgery menu"
+                          onClick={() => setIsHeartDropdownOpen((prev) => !prev)}
+                          className="text-gray-600"
+                        >
+                          <Plus
+                            className={`h-5 w-5 transition-transform duration-200 ${
+                              isHeartDropdownOpen ? "rotate-45" : "rotate-0"
+                            }`}
+                          />
+                        </button>
+                      </div>
+                      {isHeartDropdownOpen && (
+                        <div className="ml-4 space-y-1 text-sm">
+                          {heartSurgeryProcedures.map((procedure, index) => (
+                            <div
+                              key={index}
+                              className="text-gray-500 hover:text-blue-600 transition-colors"
+                            >
+                              {procedure}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
