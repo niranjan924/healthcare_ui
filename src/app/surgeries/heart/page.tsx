@@ -153,18 +153,18 @@ export default function HeartSurgery() {
               <Stethoscope className="w-4 h-4" />
               Leading Cardiac Care in Ahmedabad
             </div> */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Best Cardiothoracic and Vascular Surgeons in Ahmedabad
             </h1>
-            <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
                 At Health Care Association in Ahmedabad, we offer advanced
                 surgical care for the heart and blood vessels. Our team of
                 expert surgeons specializes in complex procedures, focusing on
                 precision and safety to ensure a faster recovery for our
                 patients.
               </p>
-              <p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
                 Your heart health is our top concern. As a leading cardiology
                 consulting hospital in Ahmedabad, we offer a comprehensive
                 approach, bringing together expert specialists to provide the
@@ -179,10 +179,10 @@ export default function HeartSurgery() {
       <section className="px-4 py-16 ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Why Choose Health Care Association Cardiac Specialists?
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               Discover what makes our cardiac care exceptional through our
               commitment to excellence in every aspect of treatment.
             </p>
@@ -249,10 +249,10 @@ export default function HeartSurgery() {
       <section className="px-4 py-16 ">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Our Specialized Surgical Procedures
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               We offer a comprehensive range of advanced cardiac and vascular
               surgical procedures, utilizing cutting-edge technology and
               techniques.
@@ -282,7 +282,7 @@ export default function HeartSurgery() {
       </section>
 
       {/* Vascular Surgery Information */}
-      <p className="text-gray-600 text-lg max-w-3xl mx-auto pb-16">
+      <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto pb-16 text-center">
         Vascular surgery is a young, dynamic and rapidly expanding specialty
         that deals with the comprehensive diagnostic and therapeutic services
         for patients with diseases and disorders of the arteries, veins and

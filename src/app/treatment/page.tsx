@@ -102,10 +102,10 @@ export default function Treatment() {
                 <Heart className="h-12 w-12 text-blue-600" />
               </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Expert Treatment Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               At Health Care Association, we specialize in providing expert
               consulting and treatment solutions for common seasonal illnesses
               that affect communities across Ahmedabad. Our goal is to ensure
@@ -134,9 +134,9 @@ export default function Treatment() {
             with specialized protocols and expert guidance.
           </p> */}
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-16">
             We offer comprehensive support for
-          </h2>
+          </h1>
         </div>
 
         {/* Treatment Grid */}
@@ -187,10 +187,10 @@ export default function Treatment() {
           ))}
         </div>
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 mt-8">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8 mt-8">
             Add some heading here
-          </h2>
-          <p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
             Whether you're a clinic, hospital, or public health organization,
             Health Care Association offers tailored consulting to combat
             seasonal diseases with precision and care. Partner with us to

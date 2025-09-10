@@ -183,24 +183,24 @@ export default function AboutPage() {
       </section> */}
 
       {/* Introduction */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Dedicated to Your Health
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-600 to-emerald-600 mx-auto mb-8"></div>
-          </div>
+          {/* <div className="text-center mb-16"> */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-16">
+            Dedicated to Your Health
+          </h1>
+          {/* <div className="w-24 h-1 bg-gradient-to-r from-cyan-600 to-emerald-600 mx-auto mb-8"></div> */}
+          {/* </div> */}
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 At Health Care Association Infectious Diseases Clinic,
                 Ahmedabad, we are a team of dedicated physicians, nurses, and
                 support personnel who specialize in the diagnosis, treatment,
                 and management of various infectious diseases.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 We are committed to providing our patients with the most
                 superior care available. Our collaborative approach ensures that
                 every patient receives a comprehensive and coordinated care plan
@@ -245,10 +245,11 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Our Expertise
-            </h2>
-            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               Our clinic is equipped to handle a wide range of infections,
               including complicated tropical infections like Chikungunya,
               Typhoid, Malaria, and Dengue. We also have extensive experience in
@@ -277,10 +278,10 @@ export default function AboutPage() {
             ))}
           </div>
           <div className="text-center mb-16 mt-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Add some heading here
-            </h2>
-            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               Our collaborative approach ensures that every patient receives a
               comprehensive and coordinated care plan tailored to their specific
               needs.
@@ -335,10 +336,10 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               The Absolute Trusted Experts
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               At Health Care Association in Ahmedabad, we are unwaveringly and
               profoundly committed to providing consistently superior and
               exceptional healthcare services to address the critical, daily,

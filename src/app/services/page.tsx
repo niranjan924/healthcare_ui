@@ -35,14 +35,14 @@ export default function Services() {
       <div className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Our Medical Services
-            </h2>
+            </h1>
             {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive infectious disease treatment and management services
               offered at our specialized clinic in Ahmedabad.
             </p> */}
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               Services Offered at Health Care Association Infectious Diseases
               Clinic, Ahmedabad
             </p>

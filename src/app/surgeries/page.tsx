@@ -185,19 +185,21 @@ export default function Surgeries() {
             {/* <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Surgical Specialties
           </h2> */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Comprehensive surgical care at the best surgery hospital in
               Ahmedabad
-            </h2>
+            </h1>
             {/* <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Comprehensive surgical care at the best surgery hospital in Ahmedabad
           </p> */}
-            <p className="text-xl text-gray-700 mx-auto">
-              Our urology department specializes in the diagnosis and surgical
-              management of kidney, bladder, and urinary tract conditions. From
-              kidney stone removal to prostate and reconstructive urology
-              procedures, our expert surgeons provide world-class care with
-              precision and compassion.
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
+              At our hospital, we take pride in being recognized as one of the
+              best surgery hospitals in{" "}
+              <span className="font-semibold">Ahmedabad</span>, offering
+              advanced and patient-centric surgical care. With a team of highly
+              qualified surgeons, modern technology, and state-of-the-art
+              infrastructure, we ensure safe, effective, and minimally invasive
+              treatments tailored to your health needs.
             </p>
           </div>
 
@@ -353,9 +355,9 @@ export default function Surgeries() {
       <section className="py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4 md:mb-8">
               Why Choose Us?
-            </h2>
+            </h1>
             {/* <p className="text-xl text-gray-700">
             Your health and safety come first with our commitment to surgical excellence
           </p> */}
@@ -377,7 +379,7 @@ export default function Surgeries() {
             {/* <p className="text-lg text-gray-700 mb-8">
             Whether it's urology, orthopedics, laparoscopy, or cardiac surgery, we are committed to delivering the highest standards of surgical excellence.
           </p> */}
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-6xl mx-auto">
               At our hospital, your health and safety come first. Whether it’s
               urology, orthopedics, laparoscopy, or cardiac surgery, we are
               committed to delivering the highest standards of surgical
