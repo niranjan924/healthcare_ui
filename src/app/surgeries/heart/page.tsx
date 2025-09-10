@@ -146,9 +146,9 @@ export default function HeartSurgery() {
           priority
         />
       </div>
-      <section className="relative px-4 py-16 md:py-24 lg:py-32">
+      <section className="relative px-4 pt-16 md:pt-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center">
             {/* <div className="inline-flex items-center gap-2 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Stethoscope className="w-4 h-4" />
               Leading Cardiac Care in Ahmedabad

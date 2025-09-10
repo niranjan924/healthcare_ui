@@ -18,7 +18,7 @@ export default function Header() {
 
   const heartSurgeryProcedures = [
     "Vascular Surgery",
-    "Pacemaker Surgery", 
+    "Pacemaker Surgery",
     "Open Heart Surgery",
     "Angiography",
     "Minimally Invasive Cardiovascular Surgery (MICS)",
@@ -82,11 +82,7 @@ export default function Header() {
       ) {
         setIsSurgeriesDropdownOpen(false);
       }
-      if (
-        heartRef.current &&
-        target &&
-        !heartRef.current.contains(target)
-      ) {
+      if (heartRef.current && target && !heartRef.current.contains(target)) {
         setIsHeartDropdownOpen(false);
       }
     }
@@ -116,25 +112,25 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700  font-medium transition-colors"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700  font-medium transition-colors"
             >
               About Us
             </Link>
             <Link
               href="/services"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700  font-medium transition-colors"
             >
               Services
             </Link>
             <Link
               href="/treatment"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700  font-medium transition-colors"
             >
               Treatment
             </Link>
@@ -148,14 +144,14 @@ export default function Header() {
                 <Link
                   href="/surgeries"
                   onClick={() => setIsSurgeriesDropdownOpen(true)}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                  className="text-gray-700  font-medium transition-colors"
                 >
                   Surgeries
                 </Link>
                 <button
                   aria-label="Open surgeries menu"
                   onClick={openSurgeriesMenu}
-                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                  className="text-gray-700  transition-colors"
                 >
                   <ChevronDown className="h-6 w-6 mt-1" />
                   {/* <ChevronDown
@@ -175,21 +171,21 @@ export default function Header() {
                   <Link
                     href="/surgeries/urology"
                     onClick={() => setIsSurgeriesDropdownOpen(false)}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-cyan-700 transition-colors"
                   >
                     Urology Surgery
                   </Link>
                   <Link
                     href="/surgeries/laparoscopic"
                     onClick={() => setIsSurgeriesDropdownOpen(false)}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-cyan-700 transition-colors"
                   >
                     Laparoscopic Surgery
                   </Link>
                   <Link
                     href="/surgeries/orthopedic"
                     onClick={() => setIsSurgeriesDropdownOpen(false)}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                    className="block px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-cyan-700 transition-colors"
                   >
                     Orthopedic Surgery
                   </Link>
@@ -199,7 +195,7 @@ export default function Header() {
                     onMouseEnter={openHeartMenu}
                     onMouseLeave={scheduleCloseHeartMenu}
                   >
-                    <div className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">
+                    <div className="flex items-center justify-between px-4 py-2 text-gray-900 hover:bg-gray-100 transition-colors">
                       <Link
                         href="/surgeries/heart"
                         onClick={() => setIsSurgeriesDropdownOpen(false)}
@@ -209,7 +205,7 @@ export default function Header() {
                       </Link>
                       <ChevronDown className="h-4 w-4 ml-2" />
                     </div>
-                    
+
                     {isHeartDropdownOpen && (
                       <div
                         className="absolute right-full top-0 mt-0 w-80 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50 max-h-96 overflow-y-auto"
@@ -222,7 +218,7 @@ export default function Header() {
                         {heartSurgeryProcedures.map((procedure, index) => (
                           <div
                             key={index}
-                            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                            className="px-4 py-2 text-gray-800 hover:text-cyan-700 transition-colors cursor-pointer"
                           >
                             {procedure}
                           </div>
@@ -235,13 +231,13 @@ export default function Header() {
             </div>
             {/* <Link
               href="/blog"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700 font-medium transition-colors"
             >
               Blog
             </Link> */}
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className="text-gray-700 font-medium transition-colors"
             >
               Contact
             </Link>
@@ -270,28 +266,28 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 Home
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 About Us
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 Services
               </Link>
               <Link
                 href="/treatment"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 Treatment
               </Link>
@@ -324,7 +320,7 @@ export default function Header() {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium "
+                      className="block text-gray-600  font-medium "
                     >
                       Urology Surgery
                     </Link>
@@ -334,7 +330,7 @@ export default function Header() {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium"
+                      className="block text-gray-600  font-medium"
                     >
                       Laparoscopic Surgery
                     </Link>
@@ -344,7 +340,7 @@ export default function Header() {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium"
+                      className="block text-gray-600  font-medium"
                     >
                       Orthopedic Surgery
                     </Link>
@@ -362,7 +358,9 @@ export default function Header() {
                         </Link>
                         <button
                           aria-label="Open heart surgery menu"
-                          onClick={() => setIsHeartDropdownOpen((prev) => !prev)}
+                          onClick={() =>
+                            setIsHeartDropdownOpen((prev) => !prev)
+                          }
                           className="text-gray-600"
                         >
                           <Plus
@@ -373,12 +371,9 @@ export default function Header() {
                         </button>
                       </div>
                       {isHeartDropdownOpen && (
-                        <div className="ml-4 space-y-1 text-sm">
+                        <div className="ml-4 space-y-1 text-base">
                           {heartSurgeryProcedures.map((procedure, index) => (
-                            <div
-                              key={index}
-                              className="text-gray-500 hover:text-blue-600 transition-colors"
-                            >
+                            <div key={index} className="text-gray-800">
                               {procedure}
                             </div>
                           ))}
@@ -390,14 +385,14 @@ export default function Header() {
               </div>
               {/* <Link
                 href="/blog"
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 Blog
               </Link> */}
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700  font-medium"
               >
                 Contact
               </Link>
