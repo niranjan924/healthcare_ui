@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, MapPin, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, MapPin, ChevronDown, Plus } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/assets/healthcare-logo.png";
@@ -27,24 +27,8 @@ export default function Header() {
     }
     closeTimerRef.current = window.setTimeout(() => {
       setIsSurgeriesDropdownOpen(false);
-      try {
-        if (typeof window !== "undefined")
-          window.localStorage.setItem("surgeriesMenuOpen", "false");
-      } catch {}
     }, 150);
   }
-
-  useEffect(() => {
-    try {
-      const stored =
-        typeof window !== "undefined"
-          ? window.localStorage.getItem("surgeriesMenuOpen")
-          : null;
-      if (stored === "true") {
-        setIsSurgeriesDropdownOpen(true);
-      }
-    } catch {}
-  }, []);
 
   useEffect(() => {
     function handleDocumentClick(event: MouseEvent) {
@@ -59,10 +43,6 @@ export default function Header() {
         !surgeriesRef.current.contains(target)
       ) {
         setIsSurgeriesDropdownOpen(false);
-        try {
-          if (typeof window !== "undefined")
-            window.localStorage.setItem("surgeriesMenuOpen", "false");
-        } catch {}
       }
     }
     if (typeof window !== "undefined") {
@@ -122,35 +102,22 @@ export default function Header() {
               <div className="flex items-center gap-1">
                 <Link
                   href="/surgeries"
-                  onClick={() => {
-                    setIsSurgeriesDropdownOpen(true);
-                    try {
-                      if (typeof window !== "undefined")
-                        window.localStorage.setItem(
-                          "surgeriesMenuOpen",
-                          "true"
-                        );
-                    } catch {}
-                  }}
+                  onClick={() => setIsSurgeriesDropdownOpen(true)}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
                 >
                   Surgeries
                 </Link>
                 <button
                   aria-label="Open surgeries menu"
-                  onClick={() => {
-                    openSurgeriesMenu();
-                    try {
-                      if (typeof window !== "undefined")
-                        window.localStorage.setItem(
-                          "surgeriesMenuOpen",
-                          "true"
-                        );
-                    } catch {}
-                  }}
+                  onClick={openSurgeriesMenu}
                   className="text-gray-700 hover:text-blue-600 transition-colors"
                 >
-                  <ChevronDown className="h-4 w-4 mt-1" />
+                  <ChevronDown className="h-6 w-6 mt-1" />
+                  {/* <ChevronDown
+                    className={`h-6 w-6 mt-1 transform transition-transform duration-200 ${
+                      isSurgeriesDropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  /> */}
                 </button>
               </div>
 
@@ -162,64 +129,28 @@ export default function Header() {
                 >
                   <Link
                     href="/surgeries/urology"
-                    onClick={() => {
-                      setIsSurgeriesDropdownOpen(false);
-                      try {
-                        if (typeof window !== "undefined")
-                          window.localStorage.setItem(
-                            "surgeriesMenuOpen",
-                            "false"
-                          );
-                      } catch {}
-                    }}
+                    onClick={() => setIsSurgeriesDropdownOpen(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Urology Surgery
                   </Link>
                   <Link
                     href="/surgeries/laparoscopic"
-                    onClick={() => {
-                      setIsSurgeriesDropdownOpen(false);
-                      try {
-                        if (typeof window !== "undefined")
-                          window.localStorage.setItem(
-                            "surgeriesMenuOpen",
-                            "false"
-                          );
-                      } catch {}
-                    }}
+                    onClick={() => setIsSurgeriesDropdownOpen(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Laparoscopic Surgery
                   </Link>
                   <Link
                     href="/surgeries/orthopedic"
-                    onClick={() => {
-                      setIsSurgeriesDropdownOpen(false);
-                      try {
-                        if (typeof window !== "undefined")
-                          window.localStorage.setItem(
-                            "surgeriesMenuOpen",
-                            "false"
-                          );
-                      } catch {}
-                    }}
+                    onClick={() => setIsSurgeriesDropdownOpen(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Orthopedic Surgery
                   </Link>
                   <Link
                     href="/surgeries/heart"
-                    onClick={() => {
-                      setIsSurgeriesDropdownOpen(false);
-                      try {
-                        if (typeof window !== "undefined")
-                          window.localStorage.setItem(
-                            "surgeriesMenuOpen",
-                            "false"
-                          );
-                      } catch {}
-                    }}
+                    onClick={() => setIsSurgeriesDropdownOpen(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                   >
                     Heart Surgery
@@ -259,7 +190,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t text-lg">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
@@ -293,46 +224,32 @@ export default function Header() {
                 <div className="flex items-center justify-between">
                   <Link
                     href="/surgeries"
-                    onClick={(e) => {
-                      setIsSurgeriesDropdownOpen((prev) => !prev);
-                    }}
+                    onClick={() => setIsMenuOpen(false)}
                     className="text-gray-700 font-medium"
                   >
                     Surgeries
                   </Link>
                   <button
                     aria-label="Open surgeries menu"
-                    onClick={() => {
-                      setIsSurgeriesDropdownOpen(true);
-                      try {
-                        if (typeof window !== "undefined")
-                          window.localStorage.setItem(
-                            "surgeriesMenuOpen",
-                            "true"
-                          );
-                      } catch {}
-                    }}
+                    onClick={() => setIsSurgeriesDropdownOpen((prev) => !prev)}
                     className="text-gray-700"
                   >
-                    <ChevronDown className="h-4 w-4" />
+                    <Plus
+                      className={`h-6 w-6 transition-transform duration-200 text-2xl ${
+                        isSurgeriesDropdownOpen ? "rotate-45" : "rotate-0"
+                      }`}
+                    />
                   </button>
                 </div>
                 {isSurgeriesDropdownOpen && (
-                  <div className="ml-4 space-y-2">
+                  <div className="ml-4 space-y-2 text-base">
                     <Link
                       href="/surgeries/urology"
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
-                        try {
-                          if (typeof window !== "undefined")
-                            window.localStorage.setItem(
-                              "surgeriesMenuOpen",
-                              "false"
-                            );
-                        } catch {}
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                      className="block text-gray-600 hover:text-blue-600 font-medium "
                     >
                       Urology Surgery
                     </Link>
@@ -341,15 +258,8 @@ export default function Header() {
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
-                        try {
-                          if (typeof window !== "undefined")
-                            window.localStorage.setItem(
-                              "surgeriesMenuOpen",
-                              "false"
-                            );
-                        } catch {}
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                      className="block text-gray-600 hover:text-blue-600 font-medium"
                     >
                       Laparoscopic Surgery
                     </Link>
@@ -358,15 +268,8 @@ export default function Header() {
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
-                        try {
-                          if (typeof window !== "undefined")
-                            window.localStorage.setItem(
-                              "surgeriesMenuOpen",
-                              "false"
-                            );
-                        } catch {}
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                      className="block text-gray-600 hover:text-blue-600 font-medium"
                     >
                       Orthopedic Surgery
                     </Link>
@@ -375,15 +278,8 @@ export default function Header() {
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsSurgeriesDropdownOpen(false);
-                        try {
-                          if (typeof window !== "undefined")
-                            window.localStorage.setItem(
-                              "surgeriesMenuOpen",
-                              "false"
-                            );
-                        } catch {}
                       }}
-                      className="block text-gray-600 hover:text-blue-600 font-medium text-sm"
+                      className="block text-gray-600 hover:text-blue-600 font-medium"
                     >
                       Heart Surgery
                     </Link>
